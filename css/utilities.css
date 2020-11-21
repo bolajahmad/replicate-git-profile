@@ -1,0 +1,21 @@
+.visually-hidden {
+    width:1px !important;
+    height: 1px !important;
+    position: absolute;
+    overflow: hidden;
+    z-index: -10000;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown_label::after {
+    content: "";
+    position: absolute;
+    right: -50%;
+    top: 40%;
+    border: 0.5em solid;
+    border-color: white transparent transparent;
+}

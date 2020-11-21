@@ -1,0 +1,22 @@
+{
+  "name": "replicate-git-profile",
+  "version": "1.0.0",
+  "description": "A Buycoin challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bolajahmad/replicate-git-profile.git"
+  },
+  "keywords": [
+    "Javascript"
+  ],
+  "author": "Bolaji Ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bolajahmad/replicate-git-profile/issues"
+  },
+  "homepage": "https://github.com/bolajahmad/replicate-git-profile#readme"
+}
