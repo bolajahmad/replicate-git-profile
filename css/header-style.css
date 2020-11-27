@@ -39,6 +39,8 @@
     --color-scale-blue-7: #044289;
     --color-scale-blue-8: #032f62;
     --color-scale-blue-9: #05264c;
+
+    --color-text-link: #0366d6;
 }
 
 *, ::before, ::after {
@@ -52,6 +54,7 @@ body {
 }
 
 a {
+    color: var(--color-text-link);
     text-decoration: none;
 }
 
@@ -73,6 +76,10 @@ input {
     padding: 0.75em 1em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 ul, li {
     margin: 0;
     padding: 0;
@@ -86,9 +93,9 @@ div.container {
     margin: 0;
     padding: 0;
 }
-header {
+/* header {
     border-bottom: 1px solid var(--color-scale-gray-5);
-}
+} */
 
 header .navbar {
     padding: 1em 2em;
@@ -117,12 +124,6 @@ header .navbar {
         margin: 0 auto;
         margin-left: auto;
     }
-}
-
-header .navigation_links {
-    display: flex;
-    margin: 2em auto 0em;
-    padding: 0 auto 1.5em;
 }
 
 .navbar > * + * {
@@ -185,28 +186,53 @@ header .navigation_links {
     margin-left: 0;
 }
 
-.navbar .hamburger_box .menu {
-    position: absolute;
-    left: -1.5rem;
+header #menu {
     width: 100vw;
-    padding: 2em;
+    padding: 0em 2em 1em;
     background-color: var(--navbar-bg);
 }
 
-.navbar .hamburger_box .menu .list > * + * {
+header #menu .list > .list_item {
     border-top: 1px solid var(--color-fade-white-15);
 }
 
-.hamburger_box .menu .list .list_item a {
+header #menu .list .list_item a {
     display: block;
-    margin: 1em auto;
+    margin: 0.5em auto;
     color: white;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-.navbar .hamburger_box .menu .input_box {
-    display: flex;
-    margin: 1em auto;
+header #menu .input_box {
     width: 100%;
+    position: relative;
+    display: flex;
+    background-color: none;
+    align-items: center;
+    border: 0.5px solid var(--color-scale-gray-5);
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+header #menu .input_box input {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+header #menu .input_box input:focus {
+    outline: none;
+    background: white;
+    width: 100% !important;
+}
+
+header #menu .input_box input:focus + * {
+    display: none;
+}
+
+header #menu .input_box input::placeholder {
+    color: var(--color-scale-gray-4);
 }
 
 .navbar .nav_options {
@@ -279,6 +305,8 @@ header .aside .stats_box {
     font-size: 1rem;
     border-radius: 0.45em;
     padding: 0.4em;
+    display: flex;
+    align-items: center;
 }
 
 header .aside button.stats_box {
@@ -286,37 +314,20 @@ header .aside button.stats_box {
     font-size: 1rem;
     width: 100%;
     margin: 1em auto;
-    font-weight: bold;
+    font-weight: 500;
+    justify-content: center;
     border-radius: 0.45em;
     padding: 0.4em;
 }
 
-header .navigation_links .list {
-    margin: 0 auto;
-    margin-left: 30%;
-}
 
-.navigation_links .list .list_item {
-    display: inline-block;
-}
 
-.navigation_links .list .list_item + .list_item {
-    margin-left: 2em;
-}
+@media screen and (min-width: 900px) {
+    .navbar .hamburger_box {
+        display: none;
+    }
 
-.navigation_links .list .list_item a {
-    color: #000;
-    display: inline-block;
-    font-weight: normal;
-    padding: 0em auto 2em;
-    padding-bottom: 1em;
-}
-
-.navigation_links .list .list_item a:focus, .navigation_links .list .list_item a:hover {
-    border-bottom: 1px solid var(--color-scale-gray-6);
-}
-
-.navigation_links .list .list_item a.active {
-    border-bottom: 1px solid red;
-    font-weight: bold;
+    header .aside {
+        display: none;
+    }
 }

@@ -7,7 +7,9 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header-style.css">
+        <link rel="stylesheet" href="css/main-style..css">
+        <link rel="stylesheet" href="css/footer-style.css">
         <link rel="stylesheet" href="css/utilities.css">
     </head>
 
@@ -19,55 +21,10 @@
 
                     <div class="hamburger_box">
                         <div class="dropdown menu_bars" id="menu_dropdown">
-                            <i class="fa fa-bars" style="font-size: 1.5rem; color: white; background-color: none;"></i>
-                        </div>
-
-                        <div class="dropdown_menu menu" id="menu" style="display: none;">
-                            <ul class="list">
-                                <label class="input_box">
-                                    <input type="search" placeholder="Search or jump to..." class="input">
-                                    <img src="https://github.githubassets.com/images/search-key-slash.svg" 
-                                    style="position: absolute; right: 1em; height: 1.5em; width: auto; border-radius: none;" alt="">
-                                </label>
-
-                                <li class="list_item">
-                                    <a href="#">Dashboard</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#">Pull Requests</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#">Issues</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#">Marketplace</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#">Explore</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#">Settings</a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#" style="display: flex; align-items: center;">
-                                        <span style="width: 1em; height: 1em; border-radius: 50%; margin-right: 0.75em; background-color: yellowgreen;"></span>
-                                        Bolajahmad
-                                    </a>
-                                </li>
-
-                                <li class="list_item">
-                                    <a href="#" style="display: flex; align-items: center;">
-                                        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 1rem; margin-right: 0.5em;"></i>
-                                        Sign Out
-                                    </a>
-                                </li>
-                            </ul>
+                            <svg height="24" width="24" viewBox="0 0 16 16" style="color: rgba(255, 255, 255, 0.7); fill: currentColor;">
+                                <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                            </svg>
+                            <!-- <i class="fa fa-bars" style="font-size: 1.5rem; color: white; background-color: none;"></i> -->
                         </div>
                     </div>
                 
@@ -125,6 +82,53 @@
                         </div>
                     </div>
                 </div>
+                <div class="dropdown_menu menu" id="menu" style="display: none;">
+                    <ul class="list">
+                        <label class="input_box">
+                            <input type="search" placeholder="Search or jump to..." class="input">
+                            <img src="https://github.githubassets.com/images/search-key-slash.svg" 
+                            style="position: absolute; right: 1em; height: 1.5em; width: auto; border-radius: none;" alt="">
+                        </label>
+
+                        <li class="list_item">
+                            <a href="#">Dashboard</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#">Pull Requests</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#">Issues</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#">Marketplace</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#">Explore</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#">Settings</a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#" style="display: flex; align-items: center;">
+                                <span style="width: 1em; height: 1em; border-radius: 50%; margin-right: 0.75em; background-color: yellowgreen;"></span>
+                                Bolajahmad
+                            </a>
+                        </li>
+
+                        <li class="list_item">
+                            <a href="#" style="display: flex; align-items: center;">
+                                <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 1rem; margin-right: 0.5em;"></i>
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
                 <aside class="aside">
                     <div class="profile_detail">
@@ -132,44 +136,298 @@
                         <span class="profile_name">Bolajahmad</span>
                     </div>
 
-                    <div class="stats_box"><i class="fa fa-smile-o"></i></div>
+                    <div class="stats_box">
+                        <i class="fa fa-smile-o"></i>
+                        <span style="margin-left: 1em;">Set Status</span>
+                    </div>
 
                     <div class="summary" id="summary">
                         If I'm not writing Javascript, I'm typing JS, or styling. Or I'm reading, about Javascript.
                     </div>
 
-                    <button class="stats_box">Edit Profile</button>
+                    <div>
+                        <button class="btn stats_box">Edit Profile</button>
+                    </div>
 
                     <div>
-                        <div style="display: inline-flex; align-items: center;">
-                            <i class="fa fa-users"></i>Followers
+                        <div style="display: inline-flex; align-items: center; margin-right: 0.5em; color: #6a737d;">
+                            <svg height="16" width="16" viewBox="0 0 16 16" style="fill: currentColor;">
+                                <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path>
+                            </svg>
+                            <span style="margin-left: 0.3em;">Followers</span>
                         </div>&bull;
-                        <div style="display: inline-flex; align-items: center;">
+                        <div style="display: inline-flex; align-items: center; margin-right: 0.5em; color: #6a737d;">
                             7 Following
                         </div>&bull;
-                        <div style="display: inline-flex; align-items: center;">
+                        <div style="display: inline-flex; align-items: center; color: #6a737d;">
                             <i class="fa fa-star"></i>8
                         </div>
                     </div>
                 </aside>
 
-                <!-- <div class="navigation_links">
+                
+            </header>
+
+            <main>
+                <div class="navigation_links">
+                    <div style="min-width: 25%;"></div>
                     <ul class="list">
                         <li class="list_item">
-                            <a href="#">Overview</a>
+                            <a href="#">
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path>
+                                </svg>
+                                <span>Overview</span>
+                            </a>
                         </li>
                         <li class="list_item">
-                            <a href="#" class="active">repositories <span>19</span></a>
+                            <a href="#" class="active" style="word-break: keep-all;">
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                                </svg>
+                                <span>repositories <em>19</em></span>
+                            </a>
                         </li>
                         <li class="list_item">
-                            <a href="#">Projects</a>
+                            <a href="#">
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"></path>
+                                </svg>
+                                <span>Projects</span>
+                            </a>
                         </li>
                         <li class="list_item">
-                            <a href="#">Packages</a>
+                            <a href="#">
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"></path>
+                                </svg>
+                                <span>Packages</span>
+                            </a>
                         </li>
                     </ul>
-                </div> -->
-            </header>
+                </div>
+                
+                <div class="flex_container">
+                    <div class="sidebar">
+                        <div class="profile_detail">
+                            <div class="profilePic_large">
+                                <div class="stats_box">
+                                    <i class="fa fa-smile-o"></i>
+                                </div>
+                            </div>
+                            <div class="profile_name">Bolajahmad</div>
+                        </div>
+    
+                        <div class="summary" id="summary">
+                            If I'm not writing Javascript, I'm typing JS, or styling. Or I'm reading, about Javascript.
+                        </div>
+    
+                        <div>
+                            <button class="btn stats_box">Edit Profile</button>
+                        </div>
+    
+                        <div>
+                            <div style="display: inline-flex; align-items: center; margin-right: 0.5em; color: #6a737d;">
+                                <svg height="16" width="16" viewBox="0 0 16 16" style="fill: currentColor;">
+                                    <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path>
+                                </svg>
+                                <span style="margin-left: 0.3em;">Followers</span>
+                            </div>&bull;
+                            <div style="display: inline-flex; align-items: center; margin-right: 0.5em; color: #6a737d;">
+                                7 Following
+                            </div>&bull;
+                            <div style="display: inline-flex; align-items: center; color: #6a737d;">
+                                <i class="fa fa-star"></i>8
+                            </div>
+                        </div>
+
+                        <div class="contact">
+                            <div>
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
+                                </svg>
+                                <span style="margin-left: 0.5em;">Lagos, Nigeria</span>
+                            </div>
+                            <div>
+                                <i class="fa fa-twitter"></i>
+                                <span style="margin-left: 0.5em;">@bolajahmad</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Highlights</h3>
+                            <div style="font-size: 0.75rem; display: flex; align-items: center;">
+                                <svg height="16" width="16" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path>
+                                </svg>
+                                <div style="display: inline-block; margin-left: 0.5em;">Arctic Code Vault Contributor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <div class="header">
+                            <input type="search" placeholder="Find a repository">
+        
+                            <div class="filter_wrapper">
+                                <button class="filter_box btn">
+                                    <span>Type:</span> <span>All</span>
+                                </button>
+                                <button class="filter_box btn">
+                                    <span>Language:</span> <span>All</span>
+                                </button>
+            
+                                <button class="btn btn_small" style="display: flex; align-items: center; background-color: #2ea44f; color: white;">
+                                    <svg class="octicon" height="16" viewBox="0 0 16 16" width="16">
+                                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                                    </svg>
+                                    <span>New</span>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <ul class="repo_wrapper">
+                            <li class="repo_box">
+                                <div class="repo_detail">
+                                    <h3 className="repo_name">
+                                        <a href="#">replicate-git-profile</a>
+                                    </h3>
+                                    <p class="repo_note">
+                                        A buycoins africa challenge to replicate github repository tab
+                                    </p>
+                                    <div class="other_detail">
+                                        <div>
+                                            <span class="html"></span>
+                                            <span class="lang">HTML</span>
+                                        </div>
+                                        <div>Updated 4 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="repo_rating">
+                                    <button class="btn rating">
+                                        <i class="fa fa-star"></i>
+                                        Star
+                                    </button>
+                                </div>
+                            </li>
+                            
+                            <li class="repo_box">
+                                <div class="repo_detail">
+                                    <h3 className="repo_name">
+                                        <a href="#">replicate-git-profile</a>
+                                    </h3>
+                                    <p class="repo_note">
+                                        A buycoins africa challenge to replicate github repository tab
+                                    </p>
+                                    <div class="other_detail">
+                                        <div>
+                                            <span class="html"></span>
+                                            <span class="lang">HTML</span>
+                                        </div>
+                                        <div>Updated 4 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="repo_rating">
+                                    <button class="btn rating">
+                                        <i class="fa fa-star"></i>
+                                        Star
+                                    </button>
+                                </div>
+                            </li>
+                            
+                            <li class="repo_box">
+                                <div class="repo_detail">
+                                    <h3 className="repo_name">
+                                        <a href="#">replicate-git-profile</a>
+                                    </h3>
+                                    <p class="repo_note">
+                                        A buycoins africa challenge to replicate github repository tab
+                                    </p>
+                                    <div class="other_detail">
+                                        <div>
+                                            <span class="html"></span>
+                                            <span class="lang">HTML</span>
+                                        </div>
+                                        <div>Updated 4 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="repo_rating">
+                                    <button class="btn rating">
+                                        <i class="fa fa-star"></i>
+                                        Star
+                                    </button>
+                                </div>
+                            </li>
+                            
+                            <li class="repo_box">
+                                <div class="repo_detail">
+                                    <h3 className="repo_name">
+                                        <a href="#">replicate-git-profile</a>
+                                    </h3>
+                                    <p class="repo_note">
+                                        A buycoins africa challenge to replicate github repository tab
+                                    </p>
+                                    <div class="other_detail">
+                                        <div>
+                                            <span class="html"></span>
+                                            <span class="lang">HTML</span>
+                                        </div>
+                                        <div>Updated 4 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="repo_rating">
+                                    <button class="btn rating">
+                                        <i class="fa fa-star"></i>
+                                        Star
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer">
+                    <ul class="footer_list">
+                        <li class="list_item">
+                            &copy; 2020 GitHub, Inc.
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Terms</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Privacy</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Security</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Status</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Help</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Contact GitHub</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Pricing</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">API</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Training</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">Blog</a>
+                        </li>
+                        <li class="list_item">
+                            <a href="/">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
         </div>
 
 

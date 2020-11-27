@@ -1,0 +1,25 @@
+footer {
+    display: block;
+    padding: 0 1em;
+}
+
+footer .footer {
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    padding: 3.5em 0em 1.5em;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.footer .footer_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.footer .footer_list > * + * {
+    margin-left: 1em;
+}
