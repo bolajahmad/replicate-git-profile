@@ -29,8 +29,15 @@
 .dropdown_label::after {
     content: "";
     position: absolute;
-    right: -50%;
+    right: -60%;
     top: 40%;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
     border: 0.5em solid;
     border-color: white transparent transparent;
+}
+
+.dropdown:hover .dropdown_label::after {
+    border-color: rgb(241, 241, 241) transparent transparent;
 }

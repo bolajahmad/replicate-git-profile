@@ -126,6 +126,10 @@ header .navbar {
     }
 }
 
+#smProfilePic {
+    border-radius: 50%;
+}
+
 .navbar > * + * {
     margin-left: 2em;;
 } 
