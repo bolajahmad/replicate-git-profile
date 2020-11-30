@@ -151,7 +151,7 @@ class Repo {
         if(repo.updatedAt){
             const time = createElement('span', 'repo_other_detail');
             setTextOnElement(time, `Updated `);
-            appendC(repoMatrices, appendC(time, setTextOnElement(createElement('span', 'date_updated'), ` ${parseDate(repo.updatedAt)}`)));
+            appendC(repoMatrices, appendC(time, setTextOnElement(createElement('em', 'date_updated'), ` ${parseDate(repo.updatedAt)}`)));
         }
 
         appendC(dataContainer, repoName, repoDesc, repoMatrices);

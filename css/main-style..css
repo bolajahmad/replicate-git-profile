@@ -228,6 +228,7 @@ main .navigation_links .list .list_item + .list_item {
     display: flex;
     flex-direction: column;
     padding: 0em 1em;
+    font-size: 0.75rem;
     margin-top: 0;
 }
 
@@ -331,5 +332,11 @@ main .navigation_links .list .list_item + .list_item {
     }
     .main .header .filter_wrapper .btn_small {
         margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .repo_wrapper .repo_box .repo_other_detail {
+        font-size: 0.60em;
     }
 }
