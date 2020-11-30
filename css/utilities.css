@@ -26,6 +26,10 @@
     appearance: none;
 }
 
+.profile_pic {
+    border-radius: 50%;
+}
+
 .dropdown_label::after {
     content: "";
     position: absolute;

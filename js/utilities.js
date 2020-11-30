@@ -50,6 +50,48 @@ createSVG = (pathDirection) => {
     return svg;
 };
 
+function parseDate(date) {
+    const dateObject = new Date(date);
+    const dateHours = dateObject.getHours();
+    const dateMinutes = dateObject.getMinutes();
+    const dateInMonth = dateObject.getDate();
+    const dateYear = dateObject.getFullYear();
+    const month = dateObject.getMonth();
+
+    const nowObject = new Date();
+    const nowMinutes = nowObject.getMinutes();
+    const nowHours = nowObject.getHours();
+    const nowInMonth = nowObject.getDate();
+    const nowYear = nowObject.getFullYear();
+
+    if(nowObject.getMonth() > month || nowYear > dateYear){
+        return ` on ${dateInMonth} ${MONTHS[month]} ${nowYear > dateYear ? dateYear : ''}`;
+    }
+
+    if(month === nowObject.getMonth()){
+        const diff = nowInMonth - dateInMonth;
+        if(diff > 0){
+            if(diff === 1){
+                return ' yesterday';
+            }else{
+                return ` ${diff} days ago`;
+            }
+        }
+    }
+
+    if(nowHours === dateHours) {
+        let diff = nowMinutes - dateMinutes;
+        if(diff === 0){
+            return ' some seconds ago';
+        }
+
+        return ` ${ diff === 1 ? 'a' : diff } minute${diff === 1 ? '':'s'} ago`;
+    } else {
+        let diff = nowHours - dateHours;
+        return ` ${ diff === 1 ? 'an' : diff } hour${diff === 1 ? '':'s'} ago`;
+    }
+}
+
 class Repo {
     repoElement;
 
@@ -76,8 +118,8 @@ class Repo {
         }
 
         if(language){
-            const colorIndicator = createElement('span','mr-3');
-            const color = createElement('span','language-color-indicator inline-block mr-1 relative rounded-full');
+            const colorIndicator = createElement('span','repo_other_detail');
+            const color = createElement('span','language_color');
             color.style.backgroundColor = language.color;
             color.style.display = 'inline-block';
             appendC(colorIndicator, color, setTextOnElement(createElement('span', 'break-all'), language.name));
@@ -90,26 +132,26 @@ class Repo {
         }
         
         if(repo.forkCount > 0){
-            const forks = createElement('a', '');
+            const forks = createElement('a', 'repo_other_detail');
             appendC(forks, createSVG(SVG.FORK));
             setTextOnElement(forks, `${repo.forkCount}`);
             appendC(repoMatrices, forks);
         }
 
         if(repo.licenseInfo){
-            const license = createElement('span', '');
+            const license = createElement('span', 'repo_other_detail');
             appendC(repoMatrices, setTextOnElement(appendC(license, createSVG(SVG.LICENSE)), ` ${repo.licenseInfo.name}`));
         }
 
         if(repo.stargazerCount > 0){
-            const stars = createElement('a','mr-3 cursor-pointer flex-shrink-0');
+            const stars = createElement('a','repo_other_detail');
             appendC(repoMatrices, setTextOnElement(appendC(stars,createSVG(SVG.STAR)),` ${repo.stargazerCount}`));
         }
 
         if(repo.updatedAt){
-            const time = createElement('span', '');
-            setTextOnElement(time, 'Updated');
-            appendC(repoMatrices, appendC(time, setTextOnElement(createElement('span', ''),` ${repo.updatedAt}`)));
+            const time = createElement('span', 'repo_other_detail');
+            setTextOnElement(time, `Updated `);
+            appendC(repoMatrices, appendC(time, setTextOnElement(createElement('span', 'date_updated'), ` ${parseDate(repo.updatedAt)}`)));
         }
 
         appendC(dataContainer, repoName, repoDesc, repoMatrices);

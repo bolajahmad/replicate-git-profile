@@ -75,7 +75,7 @@
 
                         <div class="profile dropdown">
                             <div class="dropdown_label" style="border-radius: 50%; width: 2em; height: 2em;">
-                                <img src="" alt="" id="sm_profilePic" style="border-radius: 50%;">
+                                <img src="" alt="" id="sm_profilePic" class="profile_pic" style="border-radius: 50%;">
                             </div>
 
                             <div class="dropdown_menu"></div>
@@ -116,7 +116,9 @@
 
                         <li class="list_item">
                             <a href="#" style="display: flex; align-items: center;">
-                                <span style="width: 1em; height: 1em; border-radius: 50%; margin-right: 0.75em; background-color: yellowgreen;"></span>
+                                <span style="width: 1em; height: 1em; border-radius: 50%; margin-right: 0.75em; display: inline-block;">
+                                    <img class="profile_pic" id="dropdownPic" src="">
+                                </span>
                                 Bolajahmad
                             </a>
                         </li>
@@ -132,8 +134,8 @@
 
                 <aside class="aside">
                     <div class="profile_detail">
-                        <span class="profilePic_large"></span>
-                        <span class="profile_name">Bolajahmad</span>
+                        <img id="profilePic_large" class="profile_pic" style="border-radius: 50%; margin-right: 1em;"></span>
+                        <span class="username">bolajahmad</span>
                     </div>
 
                     <div class="stats_box">
@@ -168,10 +170,10 @@
                 
             </header>
 
-            <main>
+            <main id="main">
                 <div class="navigation_links">
-                    <div class="sticky-bar" style="min-width: 25%; max-width: 25%; display: flex; align-self: center;">
-                        <img alt="" src="" id="pic_hidden">
+                    <div id="sticky_bar">
+                        <img alt="" src="" class="profile_pic" id="pic_hidden">
                         <span>bolajahmad</span>
                     </div>
                     <ul class="list">
@@ -211,10 +213,10 @@
                 </div>
                 
                 <div class="flex_container">
-                    <div class="sidebar">
+                    <div class="sidebar" id="sidebar">
                         <div class="profile_detail">
                             <div class="profilePic_large">
-                                <img src="" alt="profile picture" id="profilePic" />
+                                <img src="" alt="profile picture" class="profile_pic" id="profilePic" />
                                 <div class="stats_box">
                                     <i class="fa fa-smile-o"></i>
                                 </div>
@@ -263,7 +265,7 @@
                             </div>
                             <div>
                                 <i class="fa fa-twitter"></i>
-                                <span style="margin-left: 0.5em;">@bolajahmad</span>
+                                <span style="margin-left: 0.5em;">@<em class="username"></em></span>
                             </div>
                         </div>
 

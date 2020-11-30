@@ -11,7 +11,7 @@ main .flex_container {
 
 main .sidebar {
     position: absolute;
-    top: -2%;
+    top: -1%;
     z-index: 120;
     flex: 0;
     max-width: 25%;
@@ -32,10 +32,6 @@ main .sidebar .profile_detail .profilePic_large {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#profilePic {
-    border-radius: 50%;
 }
 
 .sidebar .profile_detail .profilePic_large .stats_box {
@@ -159,6 +155,13 @@ main .navigation_links .list .list_item + .list_item {
     min-width: fit-content;
 }
 
+#sticky_bar {
+    min-width: 25%; 
+    max-width: 25%; 
+    display: flex; 
+    align-self: center;
+}
+
 .navigation_links .list .list_item a {
     color: #000;
     display: flex;
@@ -254,6 +257,22 @@ main .navigation_links .list .list_item + .list_item {
     border: 1px solid var(--color-border-primary);
 }
 
+.repo_wrapper .repo_box .repo_other_detail {
+    display: flex;
+    align-items: center;
+}
+
+.repo_wrapper .repo_box .repo_other_detail .date_updated {
+    margin-left: 0.2em;
+}
+
+.repo_wrapper .repo_box .repo_other_detail .language_color {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
 .repo_wrapper .repo_box .repo_detail {
     flex: 0;
     min-width: 70%;
@@ -281,6 +300,10 @@ main .navigation_links .list .list_item + .list_item {
     .main {
         max-width: 100%;
         min-width: 100%;
+    }
+
+    main .navigation_links #sticky_bar {
+        display: none;
     }
 
     main .navigation_links .list {

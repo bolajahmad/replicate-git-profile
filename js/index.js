@@ -1,17 +1,13 @@
 const menuDropdown = document.getElementById('menu_dropdown');
-const profilePics = document.querySelectorAll('.profilePic')[2];
-const profileNames = document.querySelectorAll('.profile_name');
+const profilePics = document.querySelectorAll('.profile_pic');
+const profileNames = document.querySelectorAll('.username');
 const fullName = document.querySelector('.profile_name');
 const detailName = document.querySelector('.sidebar .profile_detail');
-const stickyBar = document.querySelector('.sticky-bar');
 const followingCount = document.querySelector('.following-count');
 const followersCount = document.querySelector('.followers-count');
 const starsCount = document.querySelector('.stars-count');
 const repoCount = document.querySelector('.repo-count');
 const list = document.querySelector('.repo_wrapper');
-const profilePic = document.getElementById('profilePic');
-const stickyPic = document.getElementById('pic_hidden');
-const smProfilePic = document.getElementById('sm_profilePic');
 
 menuDropdown.addEventListener('click', () => {
     const menu = document.getElementById('menu');
@@ -40,8 +36,7 @@ const fetchDetails = async () => {
                         updatedAt
                     };
                 }),
-                profilePics: user.avatarUrl,
-                stickyPic: user.avatarUrl,
+                image: user.avatarUrl,
                 profileNames: [user.login],
                 following: user.following.totalCount,
                 followers: user.followers.totalCount,
@@ -59,30 +54,29 @@ function updateRepoList(repositories) {
     repositories.forEach(repo=> {
         appendC(list, new Repo(repo).getElem());
     });
-    console.log(repositories);
 }
 
 async function main(){
     try{
         const data = await fetchDetails();
-        console.log(data);
 
         if(data){
-            let { repositories, following, username, followers, starredRepositories } = data;
+            let { repositories, following, image, followers, starredRepositories } = data;
             updateRepoList(repositories);
+            profilePics.forEach(pic => {
+                pic.src = image;
+            });
+            /* stickyPic.src = data.profilePics;
             smProfilePic.src = data.profilePics;
-            /* profilePics.forEach(image => {
-                image.src = data.profilePics;
-            }); */
-            //stickyPic.src = data.stickyPic;
+            lgProfilePic.src = data.profilePics;
             profilePic.src = data.profilePics;
+            dropdownPic.src = data.profilePics; */
             profileNames.forEach(name => {
-                setTextOnElement(name, username);
+                setTextOnElement(name, data.profileNames[0]);
             });
             setTextOnElement(followingCount, following);
             setTextOnElement(followersCount, followers);
             setTextOnElement(starsCount, starredRepositories);
-            setTextOnElement(fullName, username);
             setTextOnElement(repoCount, repositories.length);
             setPageVisibility(true);
         }
@@ -93,30 +87,26 @@ async function main(){
     //Observe Name Element
     const nameObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry=> {
-            console.log(entry);
-            console.log(stickyBar);
-            if(entry.target.intersectionRatio > 0.1) {
-                stickyBar.style.visibility = "hidden";
-            }
-            if(entry.intersectionRatio > 0.3){
-                stickyBar.style.display = "visible"; 
+            console.log(entry.intersectionRatio);
+            if(!entry.isIntersecting) {
+                document.getElementById('sticky_bar').style.visibility = "hidden";
+            } else {
+                document.getElementById('sticky_bar').style.visibility = "visible"; 
             }
         });
     }, {
-        root: stickyBar,
-        rootMargin: '-67px 0px 0px 0px',
-        threshold: 0.5
+        root: document.getElementById('sticky_bar'),
     });
 
-    nameObserver.observe(detailName);
+    nameObserver.observe(document.getElementById('sidebar'));
 
-    menuDropdown.addEventListener('click',function(e){
+    /* menuDropdown.addEventListener('click',function(e){
         if(navigation.classList.contains('open')) {
             navigation.classList.remove('open');
         } else {
             navigation.classList.add('open');
         }
-    });
+    }); */
 }
 
 main();
